@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router";
 import { Link } from 'react-router';
 import About from './pages/About';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
+import Blog from './pages/Blog';
+import NewBlog from './pages/NewBlog';
 
 
 
@@ -17,6 +19,7 @@ const Navbar = () => {
                   <li className='hover:underline'><Link to="/">Home</Link></li>
                   <li  className='hover:underline'><Link to="/about">About</Link></li>
                   <li  className='hover:underline'><Link to="/contact">Contact</Link></li>
+                  <li  className='hover:underline'><Link to="/blog">Blog</Link></li>
               </ul>
           </nav>
             
@@ -36,6 +39,11 @@ const Footer = () => {
 }
 
 const App = () => {
+
+      const [data, setData] = useState([]);
+      const [error, setError] = useState(null);
+      const [loading, setLoading] = useState(false);
+
   return (
     <div>
       
@@ -46,6 +54,20 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="blog" element={<Blog 
+           data={data}
+           setData={setData} 
+           error={error}
+           setError={setError}
+           loading={loading}
+           setLoading={setLoading}
+           />} />
+           <Route path="new-blog" element={<NewBlog 
+           error={error}
+           setError={setError}
+           loading={loading}
+           setLoading={setLoading}
+           />} />
         </Routes>
         <Footer />
       </BrowserRouter>

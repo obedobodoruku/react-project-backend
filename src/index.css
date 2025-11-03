@@ -39,9 +39,33 @@ body {
     cursor: pointer;
 }
 
+
 .react-span:hover {
     text-decoration: underline;
 }
+
+.form-field > label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.form-field label > div {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.inputs {
+    border: 2px solid white;
+    border-radius: 7px;
+    width: 100%;
+    padding: 10px;
+}
+
+.form-field > label > div > textarea {
+    height: 300px; 
+    resize: vertical;
+}
+
 
 @keyframes appear {
     from {
