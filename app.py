@@ -4,7 +4,7 @@ from flask_cors import CORS
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-from app import app
+
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "b7f683cb6fda12538732bc135e479501a712f9b18ea9351a9f81bace1df4b084"
